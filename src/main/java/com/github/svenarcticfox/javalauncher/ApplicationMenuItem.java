@@ -7,8 +7,8 @@ import lombok.*;
 @Setter
 public class ApplicationMenuItem
 {
-    String name;
-    String location;
+    private String name;
+    private String location;
 
     /**
      * This method runs the program specified at the location string

@@ -8,6 +8,9 @@ import static org.junit.Assert.assertNotNull;
 
 public class MenuItemCreatorTest
 {
+    /**
+     * This tests to make sure the new MenuItem is not null and the action is not null.
+     */
     @Test
     public void Creator()
     {

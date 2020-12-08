@@ -1,6 +1,6 @@
-com/github/svenarcticfox/javalauncher/JavaLauncher.java
- com.github.svenarcticfox.javalauncher.JavaLauncher
 com/github/svenarcticfox/javalauncher/MenuItemCreator.java
  com.github.svenarcticfox.javalauncher.MenuItemCreator
 com/github/svenarcticfox/javalauncher/ApplicationMenuItem.java
  com.github.svenarcticfox.javalauncher.ApplicationMenuItem
+com/github/svenarcticfox/javalauncher/JavaLauncher.java
+ com.github.svenarcticfox.javalauncher.JavaLauncher
