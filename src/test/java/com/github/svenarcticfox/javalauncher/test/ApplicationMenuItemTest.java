@@ -27,7 +27,7 @@ public class ApplicationMenuItemTest
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem("Notepad" , "notepad");
         assertNotNull("The name is supposed to be not null.", applicationMenuItem.getName());
         assertNotNull("The location is supposed to be not null.", applicationMenuItem.getLocation());
-        if (applicationMenuItem.getLocation() != null)
+        if (!applicationMenuItem.getLocation().isEmpty())
             applicationMenuItem.run();
     }
 

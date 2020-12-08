@@ -24,14 +24,13 @@ public class ApplicationMenuItem
         {
             if (location.isEmpty())
             {
-                System.out.println("The location is null");
+                System.out.println("The location is null.");
             }
             else
             {
                 System.out.println("The application could not be located.");
             }
             e.printStackTrace();
-
         }
     }
 }
