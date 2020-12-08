@@ -1,0 +1,2 @@
+com/github/svenarcticfox/javalauncher/test/ApplicationMenuItemTest.java
+ com.github.svenarcticfox.javalauncher.test.ApplicationMenuItemTest
