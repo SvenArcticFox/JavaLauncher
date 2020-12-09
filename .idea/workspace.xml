@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa509349-2e11-4a96-8e74-85aafb3a488e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/ApplicationMenuUtilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/JavaLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/JavaLauncher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/ApplicationMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/ApplicationMenuItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/JavaLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/JavaLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/MenuItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/MenuItemCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +61,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lMBHDCHdQogouIPlgB3vZOVSTh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -75,7 +77,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RunManager" selected="Application.JavaLauncher">
     <configuration name="JavaLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -132,10 +134,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.JavaLauncher" />
       <item itemvalue="Gradle.JavaLauncher [test]" />
       <item itemvalue="JUnit.ApplicationMenuItemTest" />
       <item itemvalue="JUnit.MenuItemCreatorTest" />
-      <item itemvalue="Application.JavaLauncher" />
     </list>
     <recent_temporary>
       <list>
@@ -156,6 +158,9 @@
       <updated>1607396992437</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
