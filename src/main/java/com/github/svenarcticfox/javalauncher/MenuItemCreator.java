@@ -2,7 +2,7 @@ package com.github.svenarcticfox.javalauncher;
 
 import javafx.scene.control.MenuItem;
 
-public class MenuItemCreator
+public abstract class MenuItemCreator
 {
     /**
      * This creates a MenuItem Javafx object from the ApplicationMenuItem object

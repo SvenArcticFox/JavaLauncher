@@ -10,8 +10,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import javax.swing.JOptionPane;
-
 /**
  * Class that contains all of the utilities for the Application Menu on the main JavaLauncher class
  */
@@ -59,21 +57,21 @@ public abstract class ApplicationMenuUtilities
             //checks to make sure the name and location text boxes aren't empty
             if (nameTextField.getText().isEmpty())
             {
-                JOptionPane.showMessageDialog(
-                        null ,
-                        "Enter a name for the application." ,
-                        "Invalid Name" ,
-                        JOptionPane.ERROR_MESSAGE);
+                stage.toBack();
+                Alert isEmptyAlert = new Alert(Alert.AlertType.ERROR);
+                isEmptyAlert.setTitle("Invalid Name");
+                isEmptyAlert.setContentText("Enter a name for the application.");
+                isEmptyAlert.showAndWait();
                 System.out.println("The name text field is null.");
                 throw new NullPointerException();
             }
             if (applicationPathTextField.getText().isEmpty())
             {
-                JOptionPane.showMessageDialog(
-                        null ,
-                        "Enter a valid location for the application." ,
-                        "Invalid Location" ,
-                        JOptionPane.ERROR_MESSAGE);
+                stage.toBack();
+                Alert isEmptyAlert = new Alert(Alert.AlertType.ERROR);
+                isEmptyAlert.setTitle("Invalid Location");
+                isEmptyAlert.setContentText("Enter a valid location for the application.");
+                isEmptyAlert.showAndWait();
                 System.out.println("The location text field is null.");
                 throw new NullPointerException();
             }
@@ -139,11 +137,11 @@ public abstract class ApplicationMenuUtilities
             {
                 System.out.println("No item was selected from the list.");
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(
-                        null ,
-                        "Select an item on the list." ,
-                        "No Selected Item" ,
-                        JOptionPane.ERROR_MESSAGE);
+                Alert nothingSelectedAlert = new Alert(Alert.AlertType.ERROR);
+                nothingSelectedAlert.setTitle("No Selected Item");
+                nothingSelectedAlert.setContentText("Select an item on the list.");
+                stage.toBack();
+                nothingSelectedAlert.showAndWait();
             }
         });
 
