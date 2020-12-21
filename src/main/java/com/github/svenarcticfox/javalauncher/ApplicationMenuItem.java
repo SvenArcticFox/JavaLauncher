@@ -1,11 +1,13 @@
 package com.github.svenarcticfox.javalauncher;
 import lombok.*;
 
+import java.io.Serializable;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class ApplicationMenuItem
+public class ApplicationMenuItem implements Serializable
 {
     private String name;
     private String location;

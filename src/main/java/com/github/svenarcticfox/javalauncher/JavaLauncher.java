@@ -10,11 +10,16 @@ import javafx.scene.Scene;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 public class JavaLauncher extends Application
 {
     @Getter
     @Setter
     private static Menu applicationsMenu;
+    @Getter
+    @Setter
+    private static ArrayList<ApplicationMenuItem> applicationMenuItems;
 
     public static void main(String[] args)
     {
@@ -24,12 +29,21 @@ public class JavaLauncher extends Application
     @Override
     public void start(Stage primaryStage)
     {
+        applicationMenuItems = new ArrayList<>();
         MenuBar menuBar = new MenuBar();
 
         Menu fileMenu = new Menu("File");
+
+        MenuItem saveItem = new MenuItem("Save");
+        saveItem.setOnAction(event -> FileMenuUtilities.writeApplicationMenu());
+
+        MenuItem openItem = new MenuItem("Open");
+        openItem.setOnAction(event -> FileMenuUtilities.openApplicationMenu());
+
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setOnAction(x -> primaryStage.close());
-        fileMenu.getItems().add(exitItem);
+
+        fileMenu.getItems().addAll(openItem , saveItem , exitItem);
 
         applicationsMenu = new Menu("Applications");
 

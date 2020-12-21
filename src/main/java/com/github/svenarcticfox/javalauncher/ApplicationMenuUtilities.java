@@ -10,6 +10,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.ArrayList;
+
 /**
  * Class that contains all of the utilities for the Application Menu on the main JavaLauncher class
  */
@@ -20,6 +22,8 @@ public abstract class ApplicationMenuUtilities
      */
     public static void addMenuItem()
     {
+        ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItems();
+
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         Stage stage = new Stage();
 
@@ -80,6 +84,9 @@ public abstract class ApplicationMenuUtilities
                 applicationMenuItem.setName(nameTextField.getText());
                 applicationMenuItem.setLocation(applicationPathTextField.getText());
 
+                applicationMenuItems.add(applicationMenuItem);
+                JavaLauncher.setApplicationMenuItems(applicationMenuItems);
+
                 MenuItem menuItem = MenuItemCreator.create(applicationMenuItem);
                 applicationsMenu.getItems().add(menuItem);
                 JavaLauncher.setApplicationsMenu(applicationsMenu);
@@ -107,8 +114,13 @@ public abstract class ApplicationMenuUtilities
         stage.show();
     }
 
+    /**
+     * Removes an item from the application menu by displaying a list to the user and allowing them to select
+     * an item to be removed from the menu
+     */
     public static void removeMenuItem()
     {
+        ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItems();
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         Stage stage = new Stage();
 
@@ -130,6 +142,8 @@ public abstract class ApplicationMenuUtilities
             {
                 int removedMenuItemIndex = applicationMenuItemList.getSelectionModel().getSelectedIndex();
                 applicationsMenu.getItems().remove(removedMenuItemIndex);
+                applicationMenuItems.remove(removedMenuItemIndex);
+                JavaLauncher.setApplicationMenuItems(applicationMenuItems);
                 JavaLauncher.setApplicationsMenu(applicationsMenu);
                 stage.close();
             }
