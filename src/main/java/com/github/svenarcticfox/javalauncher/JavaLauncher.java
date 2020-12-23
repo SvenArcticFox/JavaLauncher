@@ -2,6 +2,9 @@ package com.github.svenarcticfox.javalauncher;
 
 import javafx.application.Application;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -36,12 +39,15 @@ public class JavaLauncher extends Application
 
         MenuItem saveItem = new MenuItem("Save");
         saveItem.setOnAction(event -> FileMenuUtilities.writeApplicationMenu());
+        saveItem.setAccelerator(new KeyCodeCombination(KeyCode.S , KeyCombination.CONTROL_DOWN));
 
         MenuItem openItem = new MenuItem("Open");
         openItem.setOnAction(event -> FileMenuUtilities.openApplicationMenu());
+        openItem.setAccelerator(new KeyCodeCombination(KeyCode.O , KeyCombination.CONTROL_DOWN));
 
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setOnAction(x -> primaryStage.close());
+        exitItem.setAccelerator(new KeyCodeCombination(KeyCode.F4 , KeyCombination.ALT_DOWN));
 
         fileMenu.getItems().addAll(openItem , saveItem , exitItem);
 

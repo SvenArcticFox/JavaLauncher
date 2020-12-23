@@ -75,7 +75,7 @@ public abstract class FileMenuUtilities implements Serializable
                 }
                 else
                 {
-                    throw new ClassNotFoundException();
+                    throw new ClassCastException();
                 }
             }
         }
@@ -84,7 +84,7 @@ public abstract class FileMenuUtilities implements Serializable
             System.out.println("The file was not selected or could not be found.");
             e.printStackTrace();
         }
-        catch (ClassNotFoundException e)
+        catch (ClassNotFoundException | ClassCastException e)
         {
             System.out.println("The class could not be determined.");
             e.printStackTrace();
