@@ -1,12 +1,7 @@
 package com.github.svenarcticfox.javalauncher.test;
 
 import com.github.svenarcticfox.javalauncher.ApplicationMenuItem;
-import org.junit.Rule;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.ExpectedException;
-
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationMenuItemTest
@@ -45,6 +40,9 @@ public class ApplicationMenuItemTest
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem();
         applicationMenuItem.setLocation("test");
+        applicationMenuItem.run();
+
+        applicationMenuItem.setLocation("");
         applicationMenuItem.run();
     }
 }
