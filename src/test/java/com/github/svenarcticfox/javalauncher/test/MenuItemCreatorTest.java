@@ -2,9 +2,8 @@ package com.github.svenarcticfox.javalauncher.test;
 
 import javafx.scene.control.MenuItem;
 import com.github.svenarcticfox.javalauncher.*;
-import org.junit.Test;
-
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class MenuItemCreatorTest
 {
@@ -15,10 +14,10 @@ public class MenuItemCreatorTest
     public void Creator()
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem("Notepad" , "notepad");
-        assertNotNull("The name is supposed to be not null.", applicationMenuItem.getName());
-        assertNotNull("The location is supposed to be not null.", applicationMenuItem.getLocation());
+        assertNotNull(applicationMenuItem.getName(), "The name is supposed to be not null.");
+        assertNotNull(applicationMenuItem.getLocation(), "The location is supposed to be not null.");
         MenuItem menuItem = MenuItemCreator.create(applicationMenuItem);
-        assertNotNull("The menuItem object should not be null" , menuItem);
-        assertNotNull("The action should not be null", menuItem.getOnAction());
+        assertNotNull(menuItem, "The menuItem object should not be null");
+        assertNotNull(menuItem.getOnAction(), "The action should not be null");
     }
 }

@@ -1,8 +1,13 @@
 package com.github.svenarcticfox.javalauncher.test;
 
 import com.github.svenarcticfox.javalauncher.ApplicationMenuItem;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.Rule;
+import org.junit.jupiter.api.Test;
+import org.junit.rules.ExpectedException;
+
+import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationMenuItemTest
 {
@@ -13,8 +18,8 @@ public class ApplicationMenuItemTest
     public void NoArgsConstructor()
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem();
-        assertNull("The name is supposed to be null." , applicationMenuItem.getName());
-        assertNull("The location is supposed to be null" , applicationMenuItem.getLocation());
+        assertNull(applicationMenuItem.getName() , "The name is supposed to be null.");
+        assertNull(applicationMenuItem.getLocation() , "The location is supposed to be null");
     }
 
     /**
@@ -25,8 +30,8 @@ public class ApplicationMenuItemTest
     public void AllArgsConstructor()
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem("Notepad" , "notepad");
-        assertNotNull("The name is supposed to be not null.", applicationMenuItem.getName());
-        assertNotNull("The location is supposed to be not null.", applicationMenuItem.getLocation());
+        assertNotNull(applicationMenuItem.getName() , "The name is supposed to be not null.");
+        assertNotNull(applicationMenuItem.getLocation() , "The location is supposed to be not null.");
         if (!applicationMenuItem.getLocation().isEmpty())
             applicationMenuItem.run();
     }
@@ -34,7 +39,8 @@ public class ApplicationMenuItemTest
     /**
      * Checks to make sure that the run method in the object throws an exception when the location is null or not found.
      */
-    @Test(expected = Exception.class)
+
+    @Test
     public void Exception()
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem();
