@@ -1,6 +1,6 @@
 package com.github.svenarcticfox.javalauncher.test;
 
-import com.github.svenarcticfox.javalauncher.ApplicationMenuItem;
+import com.github.svenarcticfox.javalauncher.components.ApplicationMenuItem;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

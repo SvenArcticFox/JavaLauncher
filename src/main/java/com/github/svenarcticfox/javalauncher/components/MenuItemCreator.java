@@ -1,4 +1,4 @@
-package com.github.svenarcticfox.javalauncher;
+package com.github.svenarcticfox.javalauncher.components;
 
 import javafx.scene.control.MenuItem;
 

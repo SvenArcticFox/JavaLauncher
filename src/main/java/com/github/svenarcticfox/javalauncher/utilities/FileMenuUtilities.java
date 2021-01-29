@@ -1,5 +1,8 @@
-package com.github.svenarcticfox.javalauncher;
+package com.github.svenarcticfox.javalauncher.utilities;
 
+import com.github.svenarcticfox.javalauncher.components.ApplicationMenuItem;
+import com.github.svenarcticfox.javalauncher.JavaLauncher;
+import com.github.svenarcticfox.javalauncher.components.MenuItemCreator;
 import javafx.scene.control.Menu;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -9,7 +12,7 @@ import javafx.scene.control.MenuItem;
 import java.io.*;
 import java.util.ArrayList;
 
-public abstract class FileMenuUtilities implements Serializable
+public abstract class FileMenuUtilities
 {
     /**
      * Writes the array list that contains all of the ApplicationMenuItem objects on to the disk
@@ -17,7 +20,7 @@ public abstract class FileMenuUtilities implements Serializable
     public static void writeApplicationMenu()
     {
         Stage stage = new Stage();
-        ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItems();
+        ArrayList<ApplicationMenuItem> applicationMenuItemList = JavaLauncher.getApplicationMenuItemList();
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter binFilter = new FileChooser.ExtensionFilter("Binary Files" ,
                 "*.bin");
@@ -28,7 +31,7 @@ public abstract class FileMenuUtilities implements Serializable
             FileOutputStream fos = new FileOutputStream(fileChooser.showSaveDialog(stage).getAbsolutePath());
 
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(applicationMenuItems);
+            oos.writeObject(applicationMenuItemList);
             oos.close();
             fos.close();
         }
@@ -39,11 +42,15 @@ public abstract class FileMenuUtilities implements Serializable
         }
     }
 
+    /**
+     * Opens the array list that contains all of the ApplicationMenuItem objects and converts each object to a MenuItem
+     * for the Application Menu
+     */
     public static void openApplicationMenu()
     {
         Stage stage = new Stage();
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
-        ArrayList<ApplicationMenuItem> applicationMenuItems;
+        ArrayList<ApplicationMenuItem> applicationMenuItemList;
 
 
         FileChooser fileChooser = new FileChooser();
@@ -63,15 +70,15 @@ public abstract class FileMenuUtilities implements Serializable
                 if (obj instanceof ArrayList)
                 {
                     applicationsMenu.getItems().clear();
-                    applicationMenuItems = (ArrayList<ApplicationMenuItem>) obj;
-                    for (ApplicationMenuItem element : applicationMenuItems)
+                    applicationMenuItemList = (ArrayList<ApplicationMenuItem>) obj;
+                    for (ApplicationMenuItem element : applicationMenuItemList)
                     {
                         MenuItem menuItem = MenuItemCreator.create(element);
                         applicationsMenu.getItems().add(menuItem);
                     }
 
                     JavaLauncher.setApplicationsMenu(applicationsMenu);
-                    JavaLauncher.setApplicationMenuItems(applicationMenuItems);
+                    JavaLauncher.setApplicationMenuItemList(applicationMenuItemList);
                 }
                 else
                 {
@@ -89,5 +96,6 @@ public abstract class FileMenuUtilities implements Serializable
             System.out.println("The class could not be determined.");
             e.printStackTrace();
         }
+
     }
 }

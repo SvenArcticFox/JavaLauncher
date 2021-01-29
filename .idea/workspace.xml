@@ -14,18 +14,31 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.github.svenarcticfox.javalauncher.test.ApplicationMenuItemTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.github.svenarcticfox.javalauncher.test.ApplicationMenuItemTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/ApplicationMenuItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/ApplicationMenuUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/FileMenuUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/JavaLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/JavaLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/svenarcticfox/javalauncher/MenuItemCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/github/svenarcticfox/javalauncher/test/ApplicationMenuItemTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/github/svenarcticfox/javalauncher/test/ApplicationMenuItemTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.github.svenarcticfox.javalauncher.test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.github.svenarcticfox.javalauncher.test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.github.svenarcticfox.javalauncher.test.ApplicationMenuItemTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.github.svenarcticfox.javalauncher.test.ApplicationMenuItemTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/ApplicationMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/components/ApplicationMenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/ApplicationMenuUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/utilities/ApplicationMenuUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/FileMenuUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/utilities/FileMenuUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/JavaLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/JavaLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/MenuItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/svenarcticfox/javalauncher/components/MenuItemCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/github/svenarcticfox/javalauncher/test/ApplicationMenuItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/svenarcticfox/javalauncher/test/ApplicationMenuItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +106,13 @@
       <recent name="C:\Users\Trevor Radez\Documents\Git Repos\JavaLauncher\libs" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ApplicationMenuItemTest.Exception">
+  <component name="RunManager" selected="Application.JavaLauncher">
     <configuration name="JavaLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.svenarcticfox.javalauncher.JavaLauncher" />
       <module name="JavaLauncher.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.svenarcticfox.javalauncher.*" />
+          <option name="PATTERN" value="com.github.svenarcticfox.javalauncher.utilities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -200,11 +213,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ApplicationMenuItemTest.Exception" />
         <item itemvalue="Gradle.ApplicationMenuItemTest" />
+        <item itemvalue="Gradle.JavaLauncher [test]" />
+        <item itemvalue="Gradle.ApplicationMenuItemTest.Exception" />
         <item itemvalue="Gradle.MenuItemCreatorTest" />
         <item itemvalue="Application.JavaLauncher" />
-        <item itemvalue="Gradle.JavaLauncher [test]" />
       </list>
     </recent_temporary>
   </component>

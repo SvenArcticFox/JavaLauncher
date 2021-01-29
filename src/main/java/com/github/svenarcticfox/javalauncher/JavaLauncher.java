@@ -1,5 +1,9 @@
 package com.github.svenarcticfox.javalauncher;
 
+import com.github.svenarcticfox.javalauncher.components.ApplicationMenuItem;
+import com.github.svenarcticfox.javalauncher.utilities.ApplicationMenuUtilities;
+import com.github.svenarcticfox.javalauncher.utilities.FileMenuUtilities;
+
 import javafx.application.Application;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
@@ -22,7 +26,7 @@ public class JavaLauncher extends Application
     private static Menu applicationsMenu;
     @Getter
     @Setter
-    private static ArrayList<ApplicationMenuItem> applicationMenuItems;
+    private static ArrayList<ApplicationMenuItem> applicationMenuItemList;
 
     public static void main(String[] args)
     {
@@ -32,7 +36,7 @@ public class JavaLauncher extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        applicationMenuItems = new ArrayList<>();
+        applicationMenuItemList = new ArrayList<>();
         MenuBar menuBar = new MenuBar();
 
         Menu fileMenu = new Menu("File");

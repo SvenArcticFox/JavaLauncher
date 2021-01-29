@@ -1,4 +1,8 @@
-package com.github.svenarcticfox.javalauncher;
+package com.github.svenarcticfox.javalauncher.utilities;
+
+import com.github.svenarcticfox.javalauncher.components.ApplicationMenuItem;
+import com.github.svenarcticfox.javalauncher.JavaLauncher;
+import com.github.svenarcticfox.javalauncher.components.MenuItemCreator;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -22,7 +26,7 @@ public abstract class ApplicationMenuUtilities
      */
     public static void addMenuItem()
     {
-        ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItems();
+        ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItemList();
 
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         Stage stage = new Stage();
@@ -85,7 +89,7 @@ public abstract class ApplicationMenuUtilities
                 applicationMenuItem.setLocation(applicationPathTextField.getText());
 
                 applicationMenuItems.add(applicationMenuItem);
-                JavaLauncher.setApplicationMenuItems(applicationMenuItems);
+                JavaLauncher.setApplicationMenuItemList(applicationMenuItems);
 
                 MenuItem menuItem = MenuItemCreator.create(applicationMenuItem);
                 applicationsMenu.getItems().add(menuItem);
@@ -120,19 +124,17 @@ public abstract class ApplicationMenuUtilities
      */
     public static void removeMenuItem()
     {
-        ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItems();
+        ArrayList<ApplicationMenuItem> applicationMenuItemList = JavaLauncher.getApplicationMenuItemList();
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         Stage stage = new Stage();
 
-        //gets an array of menu items from the applications menu
-        MenuItem[] menuItems = applicationsMenu.getItems().toArray(new MenuItem[0]);
-        ListView<String> applicationMenuItemList = new ListView<>();
+        ListView<String> applicationMenuItemListView = new ListView<>();
 
         //gets the names from each of the menu items and adds them to the list view
-        for (MenuItem menuItem : menuItems)
-            applicationMenuItemList.getItems().add(menuItem.getText());
+        for (ApplicationMenuItem menuItem : applicationMenuItemList)
+            applicationMenuItemListView.getItems().add(menuItem.getName());
 
-        applicationMenuItemList.setMaxSize(175 , 250);
+        applicationMenuItemListView.setMaxSize(175 , 250);
 
         Button remove = new Button("Remove Application");
         remove.setOnAction(event ->
@@ -140,10 +142,10 @@ public abstract class ApplicationMenuUtilities
             //checks to make sure an item was selected from the list
             try
             {
-                int removedMenuItemIndex = applicationMenuItemList.getSelectionModel().getSelectedIndex();
+                int removedMenuItemIndex = applicationMenuItemListView.getSelectionModel().getSelectedIndex();
                 applicationsMenu.getItems().remove(removedMenuItemIndex);
-                applicationMenuItems.remove(removedMenuItemIndex);
-                JavaLauncher.setApplicationMenuItems(applicationMenuItems);
+                applicationMenuItemList.remove(removedMenuItemIndex);
+                JavaLauncher.setApplicationMenuItemList(applicationMenuItemList);
                 JavaLauncher.setApplicationsMenu(applicationsMenu);
                 stage.close();
             }
@@ -165,7 +167,7 @@ public abstract class ApplicationMenuUtilities
         HBox buttonHBox = new HBox(10 , remove , cancel);
         buttonHBox.setAlignment(Pos.CENTER);
 
-        VBox mainVBox = new VBox(15 , applicationMenuItemList , buttonHBox);
+        VBox mainVBox = new VBox(15 , applicationMenuItemListView , buttonHBox);
         mainVBox.setAlignment(Pos.CENTER);
         mainVBox.setPadding(new Insets(10));
 
@@ -176,5 +178,28 @@ public abstract class ApplicationMenuUtilities
         stage.initStyle(StageStyle.UTILITY);
         stage.resizableProperty().setValue(false);
         stage.show();
+    }
+
+    /**
+     * Allows users to edit items in their Application Menu by providing a list of the applications in the menu and
+     * displaying a dialog that prompts the user
+     */
+    public static void editMenuItem()
+    {
+        ArrayList<ApplicationMenuItem> applicationMenuItemList = JavaLauncher.getApplicationMenuItemList();
+        Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
+        Stage stage = new Stage();
+
+        ListView<String> applicationMenuItemListView = new ListView<>();
+
+        //adds each of the names of the ApplicationMenuItems objects to the ListView
+        for (ApplicationMenuItem appMenuItem : applicationMenuItemList)
+            applicationMenuItemListView.getItems().add(appMenuItem.getName());
+
+        applicationMenuItemListView.setMaxSize(175 , 250);
+
+        Button edit = new Button("Edit Application");
+
+
     }
 }
