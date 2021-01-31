@@ -1,2 +1,4 @@
 #Do not track build items
 build/
+.gradle/
+.idea/
