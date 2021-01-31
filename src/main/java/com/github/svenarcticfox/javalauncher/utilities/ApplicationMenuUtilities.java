@@ -109,8 +109,7 @@ public abstract class ApplicationMenuUtilities
         mainVBox.setPadding(new Insets(10));
         mainVBox.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(mainVBox);
-        stage.setScene(scene);
+        stage.setScene(new Scene(mainVBox));
         stage.setTitle("Add Application");
         stage.setAlwaysOnTop(true);
         stage.initStyle(StageStyle.UTILITY);
@@ -171,8 +170,7 @@ public abstract class ApplicationMenuUtilities
         mainVBox.setAlignment(Pos.CENTER);
         mainVBox.setPadding(new Insets(10));
 
-        Scene scene = new Scene(mainVBox);
-        stage.setScene(scene);
+        stage.setScene(new Scene(mainVBox));
         stage.setTitle("Remove Application");
         stage.setAlwaysOnTop(true);
         stage.initStyle(StageStyle.UTILITY);
@@ -199,7 +197,97 @@ public abstract class ApplicationMenuUtilities
         applicationMenuItemListView.setMaxSize(175 , 250);
 
         Button edit = new Button("Edit Application");
+        edit.setOnAction(event ->
+        {
+            try
+            {
+                menuItemEditor(applicationMenuItemListView.getSelectionModel().getSelectedIndex() ,
+                        applicationMenuItemList , applicationsMenu);
+            }
+            catch (Exception e)
+            {
+                System.out.println("No item was selected from the list.");
+                e.printStackTrace();
+                Alert nothingSelectedAlert = new Alert(Alert.AlertType.ERROR);
+                nothingSelectedAlert.setTitle("No Selected Item");
+                nothingSelectedAlert.setContentText("Select an item on the list.");
+                stage.toBack();
+                nothingSelectedAlert.showAndWait();
+            }
+        });
 
+        Button close = new Button("Close");
+        close.setOnAction(event -> stage.close());
 
+        HBox buttonHBox = new HBox(10 , edit, close);
+        buttonHBox.setAlignment(Pos.CENTER);
+
+        VBox mainVBox = new VBox(15, applicationMenuItemListView , buttonHBox);
+        mainVBox.setAlignment(Pos.CENTER);
+        mainVBox.setPadding(new Insets(10));
+
+        stage.setScene(new Scene(mainVBox));
+        stage.setTitle("Select Application to Edit");
+        stage.setAlwaysOnTop(true);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.resizableProperty().setValue(false);
+        stage.show();
+    }
+
+    private static void menuItemEditor(int listIndex , ArrayList<ApplicationMenuItem> applicationMenuItemList ,
+                                       Menu applicationMenu)
+    {
+        ApplicationMenuItem applicationMenuItem = applicationMenuItemList.get(listIndex);
+
+        Stage stage = new Stage();
+
+        Label nameLabel = new Label("Name of Application:");
+        TextField nameTextField = new TextField();
+        nameTextField.setText(applicationMenuItem.getName());
+        HBox nameHBox = new HBox(10 , nameLabel , nameTextField);
+
+        Label applicationPathLabel = new Label("Application Location:");
+        TextField applicationPathTextField = new TextField();
+        applicationPathTextField.setText(applicationMenuItem.getLocation());
+
+        Button browse = new Button("Browse");
+        browse.setOnAction(event ->
+        {
+            FileChooser fileChooser = new FileChooser();
+            FileChooser.ExtensionFilter exeFilter = new FileChooser.ExtensionFilter("Executable Files" ,
+                    "*.exe");
+            fileChooser.getExtensionFilters().add(exeFilter);
+            fileChooser.setTitle("Select Application");
+            try
+            {
+                String location = fileChooser.showOpenDialog(stage).getAbsolutePath();
+                applicationPathTextField.setText(location);
+            }
+            catch (Exception e)
+            {
+                System.out.println("No file selected in file chooser dialog");
+                e.printStackTrace();
+            }
+        });
+        HBox applicationHBox = new HBox(10 , applicationPathLabel , applicationPathTextField , browse);
+
+        Button saveChanges = new Button("Save Changes");
+
+        Button cancel = new Button("Cancel");
+        cancel.setOnAction(event -> stage.close());
+
+        HBox buttonHBox = new HBox(10 , saveChanges , cancel);
+        buttonHBox.setAlignment(Pos.CENTER);
+
+        VBox mainVBox = new VBox(15 , nameHBox , applicationHBox , buttonHBox);
+        mainVBox.setPadding(new Insets(10));
+        mainVBox.setAlignment(Pos.CENTER);
+
+        stage.setScene(new Scene(mainVBox));
+        stage.setTitle("Edit Application");
+        stage.setAlwaysOnTop(true);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.resizableProperty().setValue(false);
+        stage.show();
     }
 }

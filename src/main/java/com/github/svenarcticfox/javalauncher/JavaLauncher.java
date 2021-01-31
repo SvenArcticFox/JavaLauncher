@@ -62,16 +62,19 @@ public class JavaLauncher extends Application
         MenuItem addApplication = new MenuItem("Add Application");
         addApplication.setOnAction(event -> ApplicationMenuUtilities.addMenuItem());
 
+        MenuItem editApplication = new MenuItem("Edit Application");
+        editApplication.setOnAction(event -> ApplicationMenuUtilities.editMenuItem());
+
         MenuItem removeApplication = new MenuItem("Remove Application");
         removeApplication.setOnAction(event -> ApplicationMenuUtilities.removeMenuItem());
 
-        settingsMenu.getItems().addAll(addApplication , removeApplication);
+        settingsMenu.getItems().addAll(addApplication , editApplication , removeApplication);
 
         menuBar.getMenus().addAll(fileMenu , applicationsMenu , settingsMenu);
         BorderPane borderPane = new BorderPane();
         borderPane.setTop(menuBar);
-        Scene scene = new Scene(borderPane, 600 , 400 , Color.WHITE);
-        primaryStage.setScene(scene);
+
+        primaryStage.setScene(new Scene(borderPane, 600 , 400 , Color.WHITE));
         primaryStage.setTitle("Java Launcher");
         primaryStage.show();
     }

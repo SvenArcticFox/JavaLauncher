@@ -1,10 +1,10 @@
 com/github/svenarcticfox/javalauncher/components/ApplicationMenuItem.java
  com.github.svenarcticfox.javalauncher.components.ApplicationMenuItem
-com/github/svenarcticfox/javalauncher/JavaLauncher.java
- com.github.svenarcticfox.javalauncher.JavaLauncher
-com/github/svenarcticfox/javalauncher/utilities/FileMenuUtilities.java
- com.github.svenarcticfox.javalauncher.utilities.FileMenuUtilities
 com/github/svenarcticfox/javalauncher/components/MenuItemCreator.java
  com.github.svenarcticfox.javalauncher.components.MenuItemCreator
+com/github/svenarcticfox/javalauncher/utilities/FileMenuUtilities.java
+ com.github.svenarcticfox.javalauncher.utilities.FileMenuUtilities
+com/github/svenarcticfox/javalauncher/JavaLauncher.java
+ com.github.svenarcticfox.javalauncher.JavaLauncher
 com/github/svenarcticfox/javalauncher/utilities/ApplicationMenuUtilities.java
  com.github.svenarcticfox.javalauncher.utilities.ApplicationMenuUtilities
