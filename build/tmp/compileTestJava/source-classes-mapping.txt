@@ -1,4 +1,0 @@
-com/github/svenarcticfox/javalauncher/test/MenuItemCreatorTest.java
- com.github.svenarcticfox.javalauncher.test.MenuItemCreatorTest
-com/github/svenarcticfox/javalauncher/test/ApplicationMenuItemTest.java
- com.github.svenarcticfox.javalauncher.test.ApplicationMenuItemTest
