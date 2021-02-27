@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -73,6 +74,9 @@ public class JavaLauncher extends Application
         menuBar.getMenus().addAll(fileMenu , applicationsMenu , settingsMenu);
         BorderPane borderPane = new BorderPane();
         borderPane.setTop(menuBar);
+
+        Image windowIcon = new Image("/icons/CoffeeBean.png");
+        primaryStage.getIcons().add(windowIcon);
 
         primaryStage.setScene(new Scene(borderPane, 600 , 400 , Color.WHITE));
         primaryStage.setTitle("Java Launcher");
