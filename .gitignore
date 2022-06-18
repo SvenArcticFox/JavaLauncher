@@ -9,3 +9,4 @@ build/
 .gradle/6.7/fileHashes/fileHashes.bin
 .gradle/6.7/executionHistory/executionHistory.lock
 .gradle/6.7/executionHistory/executionHistory.bin
+.DS_Store
