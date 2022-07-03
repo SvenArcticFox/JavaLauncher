@@ -20,6 +20,11 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
+/**To oversimplify, this is a program launches other programs. This is the main class.
+ * Written by Trevor Radez (SvenArcticFox) in 2020
+ * Language: Java
+ * JDK: BellSoft Liberica 1.8 (Provided by IntelliJ)
+ */
 public class JavaLauncher extends Application
 {
     @Getter
@@ -34,6 +39,10 @@ public class JavaLauncher extends Application
         launch(args);
     }
 
+    /**
+     * Creates the layout for the main window and adds shortcut keys for certain functions.
+     * @param primaryStage the stage, provided by JavaFX.
+     */
     @Override
     public void start(Stage primaryStage)
     {
