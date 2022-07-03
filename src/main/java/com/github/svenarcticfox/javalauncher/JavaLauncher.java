@@ -20,7 +20,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
-/**To oversimplify, this is a program launches other programs. This is the main class.
+/**To oversimplify, this is a program that launches other programs. This is the main class.
  * Written by Trevor Radez (SvenArcticFox) in 2020
  * Language: Java
  * JDK: BellSoft Liberica 1.8 (Provided by IntelliJ)
