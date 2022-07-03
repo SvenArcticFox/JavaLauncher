@@ -234,6 +234,12 @@ public abstract class ApplicationMenuUtilities
         stage.show();
     }
 
+    /**
+     * Method that edits menu items
+     * @param listIndex Where the item is in the menu list
+     * @param applicationMenuItemList The menu list
+     * @param applicationMenu The menu itself
+     */
     private static void menuItemEditor(int listIndex , ArrayList<ApplicationMenuItem> applicationMenuItemList ,
                                        Menu applicationMenu)
     {
