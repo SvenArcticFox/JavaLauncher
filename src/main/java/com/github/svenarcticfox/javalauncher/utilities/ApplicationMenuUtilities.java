@@ -203,6 +203,7 @@ public abstract class ApplicationMenuUtilities
             {
                 menuItemEditor(applicationMenuItemListView.getSelectionModel().getSelectedIndex() ,
                         applicationMenuItemList , applicationsMenu);
+                stage.close();
             }
             catch (Exception e)
             {
@@ -278,6 +279,26 @@ public abstract class ApplicationMenuUtilities
         HBox applicationHBox = new HBox(10 , applicationPathLabel , applicationPathTextField , browse);
 
         Button saveChanges = new Button("Save Changes");
+        saveChanges.setOnAction(event -> {
+            //checks if there are any changes in the name before writing changes
+            if (!nameTextField.getText().equalsIgnoreCase(applicationMenuItem.getName())) {
+                applicationMenuItem.setName(nameTextField.getText());
+            }
+            //checks if there are any changes in the location before writing changes
+            if (!applicationPathTextField.getText().equalsIgnoreCase((applicationMenuItem.getLocation()))) {
+                applicationMenuItem.setLocation(applicationPathTextField.getText());
+            }
+            //removes old item and adds new item.
+            applicationMenu.getItems().remove(listIndex);
+            applicationMenu.getItems().add(listIndex , MenuItemCreator.create(applicationMenuItem));
+
+            //Confirms to the user that changes have been added
+            Alert changesSavedAlert = new Alert(Alert.AlertType.INFORMATION);
+            changesSavedAlert.setTitle("Changes Added");
+            changesSavedAlert.setContentText("All changes have been added to the menu.");
+            changesSavedAlert.show();
+            stage.close();
+        });
 
         Button cancel = new Button("Cancel");
         cancel.setOnAction(event -> stage.close());
