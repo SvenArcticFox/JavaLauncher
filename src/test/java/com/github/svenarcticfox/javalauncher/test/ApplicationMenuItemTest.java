@@ -2,6 +2,9 @@ package com.github.svenarcticfox.javalauncher.test;
 
 import com.github.svenarcticfox.javalauncher.components.ApplicationMenuItem;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationMenuItemTest
@@ -22,7 +25,7 @@ public class ApplicationMenuItemTest
      * is not null.
      */
     @Test
-    public void AllArgsConstructor()
+    public void AllArgsConstructor() throws IOException
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem("Notepad" , "notepad");
         assertNotNull(applicationMenuItem.getName() , "The name is supposed to be not null.");
@@ -36,7 +39,7 @@ public class ApplicationMenuItemTest
      */
 
     @Test
-    public void Exception()
+    public void Exception() throws IOException
     {
         ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem();
         applicationMenuItem.setLocation("test");

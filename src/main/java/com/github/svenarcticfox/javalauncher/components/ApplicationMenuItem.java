@@ -1,6 +1,7 @@
 package com.github.svenarcticfox.javalauncher.components;
 import lombok.*;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 @AllArgsConstructor
@@ -15,24 +16,8 @@ public class ApplicationMenuItem implements Serializable
     /**
      * This method runs the program specified at the location string
      */
-    public void run()
-    {
+    public void run() throws IOException {
         Runtime runtime = Runtime.getRuntime();
-        try
-        {
-            runtime.exec(location);
-        }
-        catch (Exception e)
-        {
-            if (location.isEmpty())
-            {
-                System.out.println("The location is null.");
-            }
-            else
-            {
-                System.out.println("The application could not be located.");
-            }
-            e.printStackTrace();
-        }
+        runtime.exec(location);
     }
 }
