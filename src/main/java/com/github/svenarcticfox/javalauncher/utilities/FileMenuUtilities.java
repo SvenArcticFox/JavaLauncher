@@ -25,7 +25,7 @@ public abstract class FileMenuUtilities {
         fileChooser.getExtensionFilters().add(binFilter);
         fileChooser.setTitle("Save Application Menu");
         try {
-            //writes the ArrayList to a file so it can be retrieved later
+            //writes the ArrayList to a file, so it can be retrieved later
             FileOutputStream fos = new FileOutputStream(fileChooser.showSaveDialog(stage).getAbsolutePath());
 
             ObjectOutputStream oos = new ObjectOutputStream(fos);
