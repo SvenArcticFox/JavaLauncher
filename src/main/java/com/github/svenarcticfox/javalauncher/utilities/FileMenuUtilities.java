@@ -12,13 +12,11 @@ import javafx.scene.control.MenuItem;
 import java.io.*;
 import java.util.ArrayList;
 
-public abstract class FileMenuUtilities
-{
+public abstract class FileMenuUtilities {
     /**
      * Writes the array list that contains all of the ApplicationMenuItem objects on to the disk
      */
-    public static void writeApplicationMenu()
-    {
+    public static void writeApplicationMenu() {
         Stage stage = new Stage();
         ArrayList<ApplicationMenuItem> applicationMenuItemList = JavaLauncher.getApplicationMenuItemList();
         FileChooser fileChooser = new FileChooser();
@@ -26,8 +24,8 @@ public abstract class FileMenuUtilities
                 "*.bin");
         fileChooser.getExtensionFilters().add(binFilter);
         fileChooser.setTitle("Save Application Menu");
-        try
-        {
+        try {
+            //writes the ArrayList to a file so it can be retrieved later
             FileOutputStream fos = new FileOutputStream(fileChooser.showSaveDialog(stage).getAbsolutePath());
 
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -35,8 +33,7 @@ public abstract class FileMenuUtilities
             oos.close();
             fos.close();
         }
-        catch (IOException | NullPointerException e)
-        {
+        catch (IOException | NullPointerException e) {
             System.out.println("The location was not selected or it is invalid/not available");
             e.printStackTrace();
         }
@@ -46,8 +43,7 @@ public abstract class FileMenuUtilities
      * Opens the array list that contains all of the ApplicationMenuItem objects and converts each object to a MenuItem
      * for the Application Menu
      */
-    public static void openApplicationMenu()
-    {
+    public static void openApplicationMenu() {
         Stage stage = new Stage();
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         ArrayList<ApplicationMenuItem> applicationMenuItemList;
@@ -58,8 +54,7 @@ public abstract class FileMenuUtilities
                 "*.bin");
         fileChooser.getExtensionFilters().add(binFilter);
         fileChooser.setTitle("Open Application Menu");
-        try
-        {
+        try {
             FileInputStream fis = new FileInputStream(fileChooser.showOpenDialog(stage).getAbsolutePath());
             ObjectInputStream ois = new ObjectInputStream(fis);
 
@@ -67,8 +62,9 @@ public abstract class FileMenuUtilities
             ois.close();
             fis.close();
             {
-                if (obj instanceof ArrayList)
-                {
+                //checks to make sure that the file loaded is an arraylist object of ApplicationMenuItem
+                if (obj instanceof ArrayList) {
+                    //clears the application menu and adds each item from the ArrayList individually
                     applicationsMenu.getItems().clear();
                     applicationMenuItemList = (ArrayList<ApplicationMenuItem>) obj;
                     for (ApplicationMenuItem element : applicationMenuItemList)
@@ -80,22 +76,19 @@ public abstract class FileMenuUtilities
                     JavaLauncher.setApplicationsMenu(applicationsMenu);
                     JavaLauncher.setApplicationMenuItemList(applicationMenuItemList);
                 }
-                else
-                {
+                else {
+                    //throws a ClassCastException if the object is not an instance of ArrayList
                     throw new ClassCastException();
                 }
             }
         }
-        catch (IOException | NullPointerException e)
-        {
+        catch (IOException | NullPointerException e) {
             System.out.println("The file was not selected or could not be found.");
             e.printStackTrace();
         }
-        catch (ClassNotFoundException | ClassCastException e)
-        {
+        catch (ClassNotFoundException | ClassCastException e) {
             System.out.println("The class could not be determined.");
             e.printStackTrace();
         }
-
     }
 }
