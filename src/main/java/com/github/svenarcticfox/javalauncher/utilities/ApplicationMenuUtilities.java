@@ -19,13 +19,11 @@ import java.util.ArrayList;
 /**
  * Class that contains all of the utilities for the Application Menu on the main JavaLauncher class
  */
-public abstract class ApplicationMenuUtilities
-{
+public abstract class ApplicationMenuUtilities {
     /**
      * Adds an item to the application menu
      */
-    public static void addMenuItem()
-    {
+    public static void addMenuItem() {
         ArrayList<ApplicationMenuItem> applicationMenuItems = JavaLauncher.getApplicationMenuItemList();
 
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
@@ -33,7 +31,7 @@ public abstract class ApplicationMenuUtilities
 
         Label nameLabel = new Label("Name of Application:");
         TextField nameTextField = new TextField();
-        HBox nameHBox = new HBox(10 , nameLabel , nameTextField);
+        HBox nameHBox = new HBox(10, nameLabel, nameTextField);
 
         Label applicationPathLabel = new Label("Application Location:");
         TextField applicationPathTextField = new TextField();
@@ -41,30 +39,26 @@ public abstract class ApplicationMenuUtilities
         browse.setOnAction(event ->
         {
             FileChooser fileChooser = new FileChooser();
-            FileChooser.ExtensionFilter exeFilter = new FileChooser.ExtensionFilter("Executable Files" ,
+            FileChooser.ExtensionFilter exeFilter = new FileChooser.ExtensionFilter("Executable Files",
                     "*.exe");
             fileChooser.getExtensionFilters().add(exeFilter);
             fileChooser.setTitle("Select Application");
-            try
-            {
+            try {
                 String location = fileChooser.showOpenDialog(stage).getAbsolutePath();
                 applicationPathTextField.setText(location);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("No file selected in file chooser dialog");
                 e.printStackTrace();
             }
         });
-        HBox applicationHBox = new HBox(10 , applicationPathLabel , applicationPathTextField , browse);
+        HBox applicationHBox = new HBox(10, applicationPathLabel, applicationPathTextField, browse);
 
         Button add = new Button("Add Application");
         add.setOnAction(event ->
         {
             ApplicationMenuItem applicationMenuItem = new ApplicationMenuItem();
             //checks to make sure the name and location text boxes aren't empty
-            if (nameTextField.getText().isEmpty())
-            {
+            if (nameTextField.getText().isEmpty()) {
                 stage.toBack();
                 Alert isEmptyAlert = new Alert(Alert.AlertType.ERROR);
                 isEmptyAlert.setTitle("Invalid Name");
@@ -73,8 +67,7 @@ public abstract class ApplicationMenuUtilities
                 System.out.println("The name text field is null.");
                 throw new NullPointerException();
             }
-            if (applicationPathTextField.getText().isEmpty())
-            {
+            if (applicationPathTextField.getText().isEmpty()) {
                 stage.toBack();
                 Alert isEmptyAlert = new Alert(Alert.AlertType.ERROR);
                 isEmptyAlert.setTitle("Invalid Location");
@@ -82,9 +75,7 @@ public abstract class ApplicationMenuUtilities
                 isEmptyAlert.showAndWait();
                 System.out.println("The location text field is null.");
                 throw new NullPointerException();
-            }
-            else
-            {
+            } else {
                 applicationMenuItem.setName(nameTextField.getText());
                 applicationMenuItem.setLocation(applicationPathTextField.getText());
 
@@ -102,10 +93,10 @@ public abstract class ApplicationMenuUtilities
         Button cancel = new Button("Cancel");
         cancel.setOnAction(event -> stage.close());
 
-        HBox buttonHBox = new HBox(10 ,add , cancel);
+        HBox buttonHBox = new HBox(10, add, cancel);
         buttonHBox.setAlignment(Pos.CENTER);
 
-        VBox mainVBox = new VBox(15 , nameHBox , applicationHBox , buttonHBox);
+        VBox mainVBox = new VBox(15, nameHBox, applicationHBox, buttonHBox);
         mainVBox.setPadding(new Insets(10));
         mainVBox.setAlignment(Pos.CENTER);
 
@@ -121,8 +112,7 @@ public abstract class ApplicationMenuUtilities
      * Removes an item from the application menu by displaying a list to the user and allowing them to select
      * an item to be removed from the menu
      */
-    public static void removeMenuItem()
-    {
+    public static void removeMenuItem() {
         ArrayList<ApplicationMenuItem> applicationMenuItemList = JavaLauncher.getApplicationMenuItemList();
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         Stage stage = new Stage();
@@ -133,23 +123,20 @@ public abstract class ApplicationMenuUtilities
         for (ApplicationMenuItem menuItem : applicationMenuItemList)
             applicationMenuItemListView.getItems().add(menuItem.getName());
 
-        applicationMenuItemListView.setMaxSize(175 , 250);
+        applicationMenuItemListView.setMaxSize(175, 250);
 
         Button remove = new Button("Remove Application");
         remove.setOnAction(event ->
         {
             //checks to make sure an item was selected from the list
-            try
-            {
+            try {
                 int removedMenuItemIndex = applicationMenuItemListView.getSelectionModel().getSelectedIndex();
                 applicationsMenu.getItems().remove(removedMenuItemIndex);
                 applicationMenuItemList.remove(removedMenuItemIndex);
                 JavaLauncher.setApplicationMenuItemList(applicationMenuItemList);
                 JavaLauncher.setApplicationsMenu(applicationsMenu);
                 stage.close();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("No item was selected from the list.");
                 e.printStackTrace();
                 Alert nothingSelectedAlert = new Alert(Alert.AlertType.ERROR);
@@ -163,10 +150,10 @@ public abstract class ApplicationMenuUtilities
         Button cancel = new Button("Cancel");
         cancel.setOnAction(event -> stage.close());
 
-        HBox buttonHBox = new HBox(10 , remove , cancel);
+        HBox buttonHBox = new HBox(10, remove, cancel);
         buttonHBox.setAlignment(Pos.CENTER);
 
-        VBox mainVBox = new VBox(15 , applicationMenuItemListView , buttonHBox);
+        VBox mainVBox = new VBox(15, applicationMenuItemListView, buttonHBox);
         mainVBox.setAlignment(Pos.CENTER);
         mainVBox.setPadding(new Insets(10));
 
@@ -182,8 +169,7 @@ public abstract class ApplicationMenuUtilities
      * Allows users to edit items in their Application Menu by providing a list of the applications in the menu and
      * displaying a dialog that prompts the user
      */
-    public static void editMenuItem()
-    {
+    public static void editMenuItem() {
         ArrayList<ApplicationMenuItem> applicationMenuItemList = JavaLauncher.getApplicationMenuItemList();
         Menu applicationsMenu = JavaLauncher.getApplicationsMenu();
         Stage stage = new Stage();
@@ -194,19 +180,16 @@ public abstract class ApplicationMenuUtilities
         for (ApplicationMenuItem appMenuItem : applicationMenuItemList)
             applicationMenuItemListView.getItems().add(appMenuItem.getName());
 
-        applicationMenuItemListView.setMaxSize(175 , 250);
+        applicationMenuItemListView.setMaxSize(175, 250);
 
         Button edit = new Button("Edit Application");
         edit.setOnAction(event ->
         {
-            try
-            {
-                menuItemEditor(applicationMenuItemListView.getSelectionModel().getSelectedIndex() ,
-                        applicationMenuItemList , applicationsMenu);
+            try {
+                menuItemEditor(applicationMenuItemListView.getSelectionModel().getSelectedIndex(),
+                        applicationMenuItemList, applicationsMenu);
                 stage.close();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("No item was selected from the list.");
                 e.printStackTrace();
                 Alert nothingSelectedAlert = new Alert(Alert.AlertType.ERROR);
@@ -220,10 +203,10 @@ public abstract class ApplicationMenuUtilities
         Button close = new Button("Close");
         close.setOnAction(event -> stage.close());
 
-        HBox buttonHBox = new HBox(10 , edit, close);
+        HBox buttonHBox = new HBox(10, edit, close);
         buttonHBox.setAlignment(Pos.CENTER);
 
-        VBox mainVBox = new VBox(15, applicationMenuItemListView , buttonHBox);
+        VBox mainVBox = new VBox(15, applicationMenuItemListView, buttonHBox);
         mainVBox.setAlignment(Pos.CENTER);
         mainVBox.setPadding(new Insets(10));
 
@@ -237,13 +220,13 @@ public abstract class ApplicationMenuUtilities
 
     /**
      * Method that edits menu items
-     * @param listIndex Where the item is in the menu list
+     *
+     * @param listIndex               Where the item is in the menu list
      * @param applicationMenuItemList The menu list
-     * @param applicationMenu The menu itself
+     * @param applicationMenu         The menu itself
      */
-    private static void menuItemEditor(int listIndex , ArrayList<ApplicationMenuItem> applicationMenuItemList ,
-                                       Menu applicationMenu)
-    {
+    private static void menuItemEditor(int listIndex, ArrayList<ApplicationMenuItem> applicationMenuItemList,
+                                       Menu applicationMenu) {
         ApplicationMenuItem applicationMenuItem = applicationMenuItemList.get(listIndex);
 
         Stage stage = new Stage();
@@ -251,7 +234,7 @@ public abstract class ApplicationMenuUtilities
         Label nameLabel = new Label("Name of Application:");
         TextField nameTextField = new TextField();
         nameTextField.setText(applicationMenuItem.getName());
-        HBox nameHBox = new HBox(10 , nameLabel , nameTextField);
+        HBox nameHBox = new HBox(10, nameLabel, nameTextField);
 
         Label applicationPathLabel = new Label("Application Location:");
         TextField applicationPathTextField = new TextField();
@@ -261,22 +244,19 @@ public abstract class ApplicationMenuUtilities
         browse.setOnAction(event ->
         {
             FileChooser fileChooser = new FileChooser();
-            FileChooser.ExtensionFilter exeFilter = new FileChooser.ExtensionFilter("Executable Files" ,
+            FileChooser.ExtensionFilter exeFilter = new FileChooser.ExtensionFilter("Executable Files",
                     "*.exe");
             fileChooser.getExtensionFilters().add(exeFilter);
             fileChooser.setTitle("Select Application");
-            try
-            {
+            try {
                 String location = fileChooser.showOpenDialog(stage).getAbsolutePath();
                 applicationPathTextField.setText(location);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("No file selected in file chooser dialog");
                 e.printStackTrace();
             }
         });
-        HBox applicationHBox = new HBox(10 , applicationPathLabel , applicationPathTextField , browse);
+        HBox applicationHBox = new HBox(10, applicationPathLabel, applicationPathTextField, browse);
 
         Button saveChanges = new Button("Save Changes");
         saveChanges.setOnAction(event -> {
@@ -290,7 +270,7 @@ public abstract class ApplicationMenuUtilities
             }
             //removes old item and adds new item.
             applicationMenu.getItems().remove(listIndex);
-            applicationMenu.getItems().add(listIndex , MenuItemCreator.create(applicationMenuItem));
+            applicationMenu.getItems().add(listIndex, MenuItemCreator.create(applicationMenuItem));
 
             //Confirms to the user that changes have been added
             Alert changesSavedAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -303,10 +283,10 @@ public abstract class ApplicationMenuUtilities
         Button cancel = new Button("Cancel");
         cancel.setOnAction(event -> stage.close());
 
-        HBox buttonHBox = new HBox(10 , saveChanges , cancel);
+        HBox buttonHBox = new HBox(10, saveChanges, cancel);
         buttonHBox.setAlignment(Pos.CENTER);
 
-        VBox mainVBox = new VBox(15 , nameHBox , applicationHBox , buttonHBox);
+        VBox mainVBox = new VBox(15, nameHBox, applicationHBox, buttonHBox);
         mainVBox.setPadding(new Insets(10));
         mainVBox.setAlignment(Pos.CENTER);
 

@@ -1,4 +1,5 @@
 package com.github.svenarcticfox.javalauncher.components;
+
 import lombok.*;
 
 import java.io.IOException;
@@ -8,8 +9,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ApplicationMenuItem implements Serializable
-{
+public class ApplicationMenuItem implements Serializable {
     private String name;
     private String location;
 
